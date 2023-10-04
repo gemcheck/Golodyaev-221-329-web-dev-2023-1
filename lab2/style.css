@@ -1,0 +1,27 @@
+label:not(.radio){
+    font-weight: bold;
+}
+
+legend{
+    font-weight: bold;
+}
+
+fieldset{
+    width: 200px;
+}
+
+textarea{
+    height: 100px;
+    width: 300px;
+}
+
+div{
+    margin-top: 5px;
+}
+
+div:not(.checkbox){
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: start;
+}

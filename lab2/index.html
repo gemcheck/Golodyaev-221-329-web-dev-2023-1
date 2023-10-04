@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форма обратной связи</title>
 </head>
 <body>
     <h1>Форма обратной связи</h1>
-    <form action = "https://httpbin.org/post">
-        <input type="text">
+
+    <form method="post" action = "https://httpbin.org/post" enctype="multipart/form-data">
+        <div>
+            <label for = "fio">ФИО</label>
+            <input type = "text" name = "fio" id = "fio" placeholder="Введите фио" required>
+        </div>
+
+        <div>
+            <label for = "email">Электронная почта</label>
+            <input type = "email" name="email" id = "email" placeholder="Введите почту" required>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Как вы о нас узнали?</legend>
+                    <input type="radio" name="source" id = "friends" value = "friends">
+                    <label for = "friends" class = "radio">Друзья</label>
+
+                    <input type="radio" name="source" id = "advert" value="advert">
+                    <label for = "advert" class = "radio">Реклама</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <label for = "msg_type">Тип обращения</label>
+            <select name = "msg_type" id = "msg_type">
+                <option value ="report">Жалоба</option>
+                <option value ="suggestion">Предложение</option>
+            </select>
+        </div>
+
+        <div>
+            <label for = "main_text">Текст обращения</label>
+            <textarea name = "main_text" id = "main_text"></textarea>
+        </div>
+
+        <div>
+            <label>Вложение</label>
+            <input type = "file" id = "file" name = "file">
+        </div>
+
+        <div class = "checkbox">
+            <input type = "checkbox" name="checkbox" id = "checkbox">
+            <label for = "checkbox">Я даю согласие на обработку персонаных данных</label>
+        </div>
+
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
     </form>
 </body>
 </html>
