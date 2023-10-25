@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(246,224,148);
+}
+
+.header img{
+    height: 60px;
+    padding: 20px 0px 0px 20px;
+}
+
+.description-container {
+    background-color: rgb(48,47,52);
+    display: flex;
+}
+
+.description-container img{
+    margin-left: 50px;
+}
+
+.description-container p{
+    color: white;
+    text-align: justify;
+    margin: auto;
+    padding: 0px 100px 0px 50px;
+    font-size: 2rem;
+}
+
+.parts-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(94,64,56);
+    height: 600px;
+}
+
+.flex-elem {
+    max-width: 50%;
+}
+
+.tlou_1 img{
+    width: 100%;
+    height: 550px;
+    margin-top: 20px;
+    filter: brightness(100%);
+}
+
+.tlou_1 img:hover{
+    filter: brightness(50%);
+    transition: 1s;
+    transform: scale(1.03);
+}
+
+.tlou_2 img{
+    width: 100%;
+    height: 550px;
+    margin-top: 20px;
+    filter: brightness(100%);
+}
+
+.tlou_2 img:hover{
+    filter: brightness(50%);
+    transition: 1s;
+    transform: scale(1.03);
+}
+
+.tlou_1 + .tlou_2 {
+    margin-left: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246,224,148);
+    color: black;
+    height: 50px;
+}

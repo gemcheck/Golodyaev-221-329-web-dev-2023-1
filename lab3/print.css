@@ -1,0 +1,18 @@
+@media print {
+    .description-container img{
+        display: none;
+    }
+
+    .description-container p{
+        color: black;
+        margin-top: 50px;
+    }
+
+    .parts-container {
+        display: none;
+    }
+
+    footer {
+        margin-top: 200px;
+    }
+}

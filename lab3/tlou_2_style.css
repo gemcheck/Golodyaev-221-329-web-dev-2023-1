@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(64,76,74);
+}
+
+.header img{
+    height: 60px;
+    padding: 20px 0px 0px 20px;
+}
+
+.header img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.game-container {
+    background-color: rgb(30,31,26);
+    width: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.game-container img {
+    height: 500px;
+}
+
+.reviews-container {
+    color: white;
+    margin: auto;
+}
+
+.reviews-container h1{
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.reviews-flex {
+    display: flex;
+}
+
+.reviews-flex-elem {
+    max-width: 50%
+}
+
+.reviews-flex-elem + .reviews-flex-elem {
+    margin-left: 200px;
+}
+
+.reviews-flex-elem p{
+    font-size: 1.5rem;
+}
+
+.review-val {
+    color: rgb(26, 200, 26);
+    font-size: 1.75rem;
+}
+
+.critic-imgs {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: rgb(135,53,29); */
+}
+
+.critic-imgs img{
+    height: 50px;
+}
+
+.critic-imgs img:hover{
+    height: 50px;
+    transform: scale(0.9);
+    transition: 1s;
+}
+
+.buygame-container {
+    background-color: rgb(41,45,170);
+    height: 550px;
+    padding-bottom: 50px;
+}
+
+.buygame-container h1{
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ps5 {
+    width: 1000px;
+    height: 500px;
+    background-image: url('img/ps5.jpg');
+    box-shadow: 0 0 8px 8px rgb(41,45,170);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(64,76,74);
+    color: white;
+    height: 50px;
+}

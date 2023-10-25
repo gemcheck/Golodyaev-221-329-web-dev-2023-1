@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(254,210,150);
+}
+
+.header img{
+    height: 60px;
+    padding: 20px 0px 0px 20px;
+}
+
+.header img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.game-container {
+    background-color: rgb(254,164,131);
+    width: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.game-container img {
+    height: 500px;
+}
+
+.reviews-container {
+    color: black;
+    margin: auto;
+}
+
+.reviews-container h1{
+    color: color;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.reviews-flex {
+    display: flex;
+}
+
+.reviews-flex-elem {
+    max-width: 50%
+}
+
+.reviews-flex-elem + .reviews-flex-elem {
+    margin-left: 200px;
+}
+
+.reviews-flex-elem p{
+    font-size: 1.5rem;
+}
+
+.review-val {
+    color: rgb(26, 200, 26);
+    font-size: 1.75rem;
+}
+
+.critic-imgs {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: rgb(135,53,29); */
+}
+
+.critic-imgs img{
+    height: 50px;
+}
+
+.critic-imgs img:hover{
+    height: 50px;
+    transform: scale(0.9);
+    transition: 1s;
+}
+
+.buygame-container {
+    height: 300px;
+    background-color: rgb(93,74,36);
+}
+
+.buygame-container h1{
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.shops-container {
+    display: flex;
+    justify-content: center;
+}
+
+.shops-elem {
+    max-width: 50%;
+    text-align: center;
+    /* padding: 20px 20px 20px 20px; */
+}
+
+.shops-elem + .shops-elem{
+    margin-left: 50px;
+}
+
+.shops-elem img {
+    margin-top: 20px;
+    height: 80px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(254,210,150);
+    color: black;
+    height: 50px;
+}

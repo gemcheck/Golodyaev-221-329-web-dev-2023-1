@@ -1,0 +1,21 @@
+@media print {
+    .game-container img {
+        display: none;
+    }
+    
+    .reviews-flex-elem p {
+        color: black;
+    }
+
+    .critic-imgs {
+        display: none;
+    }
+
+    .buygame-container {
+        display: none;
+    }
+
+    footer {
+        margin-top: 500px;
+    }
+}

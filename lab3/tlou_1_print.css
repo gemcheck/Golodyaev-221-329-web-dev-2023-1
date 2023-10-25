@@ -1,0 +1,17 @@
+@media print {
+    .game-container img {
+        display: none;
+    }
+    
+    .reviews-flex-elem p {
+        color: black;
+    }
+
+    .critic-imgs {
+        display: none;
+    }
+
+    footer {
+        margin-top: 200px;
+    }
+}
