@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.calc-container {
+    width: 500px;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 50px
+}
+
+.screen {
+    padding: 20px;
+    background-color: rgb(0, 204, 255);
+    color: white;
+    height: 15%;
+    font-size: 2.5rem;
+    text-align: right;
+    color: #333;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.digits {
+    padding-top: 20px;
+}
+
+.other {
+    padding-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.key {
+    background-color: #b8b7b7;
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    font-size: 1.5em;
+    margin: 5px;
+    position: relative;
+}
+
+.key:hover {
+    background-color: #8d8d8d;
+}
