@@ -16,10 +16,11 @@
     <main>
         <div class="container">
             <div class="search-form">
-                <input type="text" class="search-field">
+                <input value="" type="text" class="search-field" list="search-options">
+                <datalist id="search-options"></datalist>
                 <button class="search-btn">Найти</button>
             </div>
-            <div class="autocomplete-dropdown"></div>
+            <div id="suggestionsContainer" class="suggestions-container"></div>
             <div class="pagination-info">
                 <span>
                     Показывать по
@@ -61,7 +62,7 @@
                     <button class="btn" data-page="2">2</button>
                     <button class="btn" data-page="3">3</button>
                 </div>
-                <button class="btn last-page-btn">Последняя страница</button> 
+                <button class="btn last-page-btn">Последняя страница</button>
             </div>
         </div>
     </main>

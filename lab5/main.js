@@ -98,8 +98,10 @@ function downloadData(page = 1) {
     let factsList = document.querySelector('.facts-list');
     let url = new URL(factsList.dataset.url);
     let perPage = document.querySelector('.per-page-btn').value;
+    let searchQuery = document.querySelector('.search-field').value.trim();
     url.searchParams.append('page', page);
     url.searchParams.append('per-page', perPage);
+    url.searchParams.append('q', searchQuery);
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
@@ -123,65 +125,44 @@ function pageBtnHandler(event) {
 }
 
 function searchBtnHandler() {
-    let searchField = document.querySelector('.search-field');
-    let searchQuery = searchField.value.trim();
+    downloadData(1)
+}
 
-    if (searchQuery !== '') {
-        let factsList = document.querySelector('.facts-list');
-        let url = new URL(factsList.dataset.url);
-        let perPage = document.querySelector('.per-page-btn').value;
-        url.searchParams.append('page', 1);
-        url.searchParams.append('per-page', perPage);
-        url.searchParams.append('q', searchQuery);
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            renderRecords(this.response.records);
-            setPaginationInfo(this.response['_pagination']);
-            renderPaginationElement(this.response['_pagination']);
-        };
-        xhr.send();
+function autocompleteRequest(query) {
+    const autocompleteEndpoint = 'http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=' + query;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', autocompleteEndpoint, false); // false здесь означает синхронный запрос
+    xhr.send();
+
+    if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+    } else {
+        console.error('Ошибка:', xhr.status);
+        return null;
     }
 }
 
-function showACVariants(variants) {
-    let autocompleteDropdown = document.querySelector('.autocomplete-dropdown');
-    autocompleteDropdown.innerHTML = '';
-    variants.forEach((variant) => {
-        let varItem = document.createElement('div');
-        varItem.classList.add('autocomplete-item');
-        varItem.textContent = variant;
-        varItem.addEventListener('click', () => {
-            document.querySelector('.search-field').value = variant;
-            autocompleteDropdown.innerHTML = '';
+function searchAutocompleteHandler() {
+    let query = document.querySelector('.search-field').value.trim();
+    let suggestionsContainer = document.getElementById('search-options');
+
+    if (query.length === 0) {
+        suggestionsContainer.innerHTML = '';
+        return;
+    }
+
+    let autocompleteData = autocompleteRequest(query);
+
+    if (autocompleteData && autocompleteData.length > 0) {
+        suggestionsContainer.innerHTML = '';
+
+        autocompleteData.forEach(suggestion => {
+            let listItem = document.createElement('option');
+            listItem.textContent = suggestion;
+            suggestionsContainer.appendChild(listItem);
         });
-        autocompleteDropdown.appendChild(varItem);
-    });
-    autocompleteDropdown.style.display = 'block';
-}
-
-function autoComplete(query) {
-    // eslint-disable-next-line max-len
-    let autoCompUrl = 'http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete';
-    autoCompUrl += "?q=" + query;
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', autoCompUrl);
-    xhr.responseType = 'json';
-    xhr.onload = function () {
-        let variants = this.response;
-        showACVariants(variants);
-    };
-    xhr.send();
-}
-
-function autoCompHandl() {
-    let searchField = document.querySelector('.search-field');
-    let query = searchField.value.trim();
-    if (query !== '') {
-        autoComplete(query);
     } else {
-        document.querySelector('.autocomplete-dropdown').style.display = 'none';
+        suggestionsContainer.innerHTML = '';
     }
 }
 
@@ -190,6 +171,5 @@ window.onload = function () {
     document.querySelector('.pagination').onclick = pageBtnHandler;
     document.querySelector('.per-page-btn').onchange = perPageBtnHandler;
     document.querySelector('.search-btn').onclick = searchBtnHandler;
-    // eslint-disable-next-line max-len
-    document.querySelector('.search-field').addEventListener('input', autoCompHandl);
+    document.querySelector('.search-field').addEventListener('input', searchAutocompleteHandler)
 };
